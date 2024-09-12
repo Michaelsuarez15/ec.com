@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading">
+        <img src="http://a.top4top.net/p_1990j031.gif" alt="loading">
+    </div>
+    <div class="mouse original"></div>
+   <script>
+        $(".loading").height($(window).height());
+        $(".loading").width($(window).width());
+        $(".loading img").css({
+        paddingtop: ($(".loading").height() - $(".loading img").
+        height()) / 2,
+        paddingleft: ($(".loading").width() - $(".loading img").
+        width()) / 2
+        });
+        $(window).resize(function () { "use strict";
+        $(".loading").width($(window).width());
+        $(".loading img").css({
+        paddingtop: ($(".loading").height() - (".loading img").
+        height()) / 2,
+        paddingleft: ($(".loading").width() - $(".loading img").
+        width()) / 2
+        });
+    }),
+    $(window).mousemove(function (e)
+      {
+      "use strict";
+      $(".original").css({
+         left: e.pageX - 16,
+         top: e.pageY - 16
+      });
+    });
+    $("body").on("click" , function (e) 
+      {
+       "use strict";
+       $(".original").clone(true).
+         appendTo("body").css({
+         left: e.pageX - 16,
+         top: e.pageY - 16
+      }).removeClass("original");
+    });
+
+   </script>
+</body>
+</html>
